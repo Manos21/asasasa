@@ -18,9 +18,15 @@ import HostLayout from "./components/HostLayout"
 
 import "./server"
 
+const AppContext = React.createContext()
+export {AppContext}
+
 function App() {
+
+  const a=1
   return (
     <BrowserRouter>
+    <AppContext.Provider value={a}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -41,6 +47,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+    </AppContext.Provider>
     </BrowserRouter>
   )
 }
